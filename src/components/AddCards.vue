@@ -62,7 +62,7 @@
     </form>
     <ul class="list">
       <li
-        v-for="(list, index) in lists"
+        v-for="(list, index) in newItems"
         :key="index"
       >
         <my-card
@@ -103,6 +103,11 @@ export default {
       ]
     }
   },
+  computed: {
+    newItems () {
+      return this.$store.state.newItems
+    }
+  },
   components: {
     myCard: Card,
     myButton: Button
@@ -122,13 +127,13 @@ export default {
   methods: {
     add () {
       let obj = {eng: this.eng, translate: this.translate, url: this.url}
-      this.lists.push(obj)
+      this.$store.state.newItems.push(obj)
       this.eng = ''
       this.translate = ''
       this.url = ''
     },
     sub (index) {
-      this.lists.splice(index, 1)
+      this.$store.state.newItems.splice(index, 1)
     }
   }
 }

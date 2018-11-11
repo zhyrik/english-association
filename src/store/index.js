@@ -31,6 +31,18 @@ export default new Vuex.Store({
         translate: 'огірок',
         url: 'https://img.purch.com/rc/300x200/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA3Ni8yMTkvb3JpZ2luYWwvY3VjdW1iZXJzLmpwZw=='
       }
+    ],
+    newItems: [
+      {
+        eng: 'apple',
+        translate: 'яблуко',
+        url: 'http://distasio.chem.cornell.edu/img/apple.jpg'
+      },
+      {
+        eng: 'chery',
+        translate: 'вишня',
+        url: 'https://vignette.wikia.nocookie.net/fruit/images/6/64/Orchard-Cherry.jpg/revision/latest?cb=20140805131428'
+      }
     ]
   },
   getters: {
