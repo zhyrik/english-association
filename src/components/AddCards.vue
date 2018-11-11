@@ -42,7 +42,7 @@
         <div class="error-text" v-if="!$v.url.url">It is not url</div>
       </div>
 
-      <my-button><span @click.prevent="add">add</span></my-button>
+      <my-button><span @click.prevent="add">add word</span></my-button>
     </form>
 
     <hr><hr>

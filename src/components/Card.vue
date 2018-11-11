@@ -27,6 +27,7 @@ export default {
   margin: 15px;
   position: relative;
   background: #D29D41;
+  text-align: center;
 }
 .img{
   width: 200px;
