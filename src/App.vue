@@ -1,17 +1,12 @@
 <template>
   <div id="app">
-    <English />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import English from './components/Main'
-
 export default {
-  name: 'App',
-  components: {
-    English
-  }
+  name: 'App'
 }
 </script>
 
