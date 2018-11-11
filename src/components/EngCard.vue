@@ -11,6 +11,8 @@
       ><div @click="check(index, $event)" class="overlay" ref="overlay"></div> </my-card>
 
     </div>
+    <hr>
+    <hr>
     <my-card :item="arr[rand+1] || items[1]" :img="false" :eng="flag"></my-card>
   </div>
 </template>
@@ -37,7 +39,7 @@ export default {
     myWord: Word,
     myButton: Button
   },
-  props: ['items', 'flag'],
+  props: ['flag', 'items'],
   methods: {
     lottery () {
       let random1 = this.random(this.items.length)

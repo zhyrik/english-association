@@ -24,7 +24,7 @@ export default {
   border: 1px solid black;
   font-size: 18px;
   line-height: 40px;
-  margin: 15px;
+  margin: 1px 15px;
   position: relative;
   background: #D29D41;
   text-align: center;

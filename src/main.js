@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import Vuelidate from 'vuelidate'
+import store from './store/index'
 
 Vue.use(Vuelidate)
 Vue.config.productionTip = false
@@ -10,6 +11,9 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  components: { App },
+  store,
+  components: {
+    App
+  },
   template: '<App/>'
 })

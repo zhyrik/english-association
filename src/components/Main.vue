@@ -26,29 +26,12 @@ import Add from './AddCards'
 export default {
   data () {
     return {
-      buttons: [false, true, false, false],
-      items: [
-        {
-          eng: 'apple',
-          translate: 'яблуко',
-          url: 'http://distasio.chem.cornell.edu/img/apple.jpg'
-        },
-        {
-          eng: 'pear',
-          translate: 'груша',
-          url: 'https://vignette.wikia.nocookie.net/recipes/images/d/db/Packham_pear.jpg/revision/latest?cb=20110210142731'
-        },
-        {
-          eng: 'chery',
-          translate: 'вишня',
-          url: 'https://vignette.wikia.nocookie.net/fruit/images/6/64/Orchard-Cherry.jpg/revision/latest?cb=20140805131428'
-        },
-        {
-          eng: 'orange',
-          translate: 'апельсин',
-          url: 'https://vignette.wikia.nocookie.net/pikmin/images/3/30/Deanesmay-orange.jpg/revision/latest?cb=20130711115615'
-        }
-      ]
+      buttons: [false, true, false, false]
+    }
+  },
+  computed: {
+    items () {
+      return this.$store.state.items
     }
   },
   components: {
