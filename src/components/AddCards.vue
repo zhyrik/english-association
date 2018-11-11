@@ -4,7 +4,6 @@
     <form>
 
       <label for="translate">Narive word</label>
-      <a class="link" :href="`https://translate.google.com/?hl=ua&authuser=0#uk/en/${translate}`" target="_blank">google translate</a>
       <input
         type="text"
         id="translate"
@@ -16,19 +15,23 @@
       </div>
 
       <label for="eng">English word</label>
-        <input
-          type="text"
-          id="eng"
-          v-model="eng"
-          @blur="$v.eng.$touch()"
-          :class="{error: $v.eng.$error }">
-        <div class="error-wrap">
-          <div class="error-text" v-if="$v.eng.$error">It is require</div>
-        </div>
+      <my-button>
+        <a class="link" :href="`https://translate.google.com/?hl=ua&authuser=0#uk/en/${translate}`" target="_blank">google translate</a>
+      </my-button>
+      <input
+        type="text"
+        id="eng"
+        v-model="eng"
+        @blur="$v.eng.$touch()"
+        :class="{error: $v.eng.$error }">
+      <div class="error-wrap">
+        <div class="error-text" v-if="$v.eng.$error">It is require</div>
+      </div>
 
       <label for="url">url address</label>
-      <p><a class="link" :href="`https://www.google.com.ua/search?biw=1093&bih=501&tbm=isch&sa=1&ei=ShixW5DDOpXAlAba2rLAAw&q=${eng}&oq=${eng}&gs_l=${eng}.3..35i39k1l2j0i67k1j0l7.2764.11037.0.11471.4.4.0.0.0.0.157.412.0j3.3.0....0...1c.1.64.${eng}..1.3.410.0...0.HJvp8CVnu6Y`" target="_blank">take url here</a>
-        press the right mouse button and select <span class="span">Open image in new tab</span> and copy the address of the picture</p>
+      <my-button>
+        <a class="link" :href="`https://www.google.com.ua/search?biw=1093&bih=501&tbm=isch&sa=1&ei=ShixW5DDOpXAlAba2rLAAw&q=${eng}&oq=${eng}&gs_l=${eng}.3..35i39k1l2j0i67k1j0l7.2764.11037.0.11471.4.4.0.0.0.0.157.412.0j3.3.0....0...1c.1.64.${eng}..1.3.410.0...0.HJvp8CVnu6Y`" target="_blank">take url here</a>
+      </my-button>
       <input
         type="text"
         id="url"
@@ -43,6 +46,20 @@
     </form>
 
     <hr><hr>
+
+    <form>
+      <label for="title">title</label>
+      <input
+        type="text"
+        id="translate"
+        v-model="translate"
+        @blur="$v.translate.$touch()"
+        :class="{error: $v.translate.$error }">
+      <div class="error-wrap">
+        <div class="error-text" v-if="$v.translate.$error">It is require</div>
+      </div>
+      <my-button><span @click.prevent="add">push all</span></my-button>
+    </form>
     <ul class="list">
       <li
         v-for="(list, index) in lists"
@@ -53,6 +70,10 @@
           :img="true"
           :eng="true"
         ><div class="delete" title="delete" @click="sub(index)">-</div></my-card>
+        <my-card
+          :item="list"
+          :eng="false"
+        ></my-card>
       </li>
     </ul>
   </div>
@@ -61,7 +82,7 @@
 <script>
 import { url, required } from 'vuelidate/lib/validators'
 import Card from './Card'
-import Button from '../keyboard/Buttons'
+import Button from './Buttons'
 export default {
   data () {
     return {
@@ -122,16 +143,23 @@ export default {
   flex-direction: row-reverse;
 }
 li{
+  display: flex;
+  flex-direction: column;
   list-style: none;
+  border: 1px solid #6C401B;
+  margin: 10px;
 }
 
 form{
-  max-width: 500px;
+  max-width: 200px;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  background: black;
+  padding: 50px;
+  color: grey;
 }
 label{
   display: flex;
@@ -143,15 +171,18 @@ input{
   margin: 5px 0 0 0;
   font-size: 18px;
   padding: 5px;
-  border-radius: 4px;
+  color: #979596;
   outline: none;
-  border: 1px solid blue;
+  border: 1px solid #979596;
+  background: #18191E;
+  font-weight: 200;
 }
 .bottom{
   margin-bottom: 20px;
 }
 .error{
-  border: 1px solid red;
+  border: 1px solid rgb(180, 90, 90);
+  background: rgb(65, 35, 35);
 }
 label{
   font-weight: 700;
@@ -163,7 +194,7 @@ label{
 .error-text{
   padding: 5px 0;
   font-size: 12px;
-  color: red;
+  color: rgb(180, 90, 90);
   font-family: arial;
 }
 

@@ -22,7 +22,7 @@
 <script>
 import Eng from './EngCard'
 // import Slider from './Slider'
-// import Add from './AddCards'
+import Add from './AddCards'
 export default {
   data () {
     return {
@@ -53,7 +53,7 @@ export default {
   },
   components: {
     // mySlider: Slider,
-    // myAdd: Add,
+    myAdd: Add,
     myEng: Eng
   },
   methods: {

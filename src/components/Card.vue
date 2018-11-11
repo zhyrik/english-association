@@ -26,6 +26,7 @@ export default {
   line-height: 40px;
   margin: 15px;
   position: relative;
+  background: #D29D41;
 }
 .img{
   width: 200px;
