@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import Eng from './EngCard'
-import Slider from './Slider'
-import Add from './AddCards'
+import Eng from './Games/EngCard'
+import Slider from './Games/Slider'
+import Add from './Games/AddCards'
 export default {
   data () {
     return {

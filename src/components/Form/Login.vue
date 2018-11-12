@@ -32,7 +32,7 @@
 <script>
 import { email, required, minLength } from 'vuelidate/lib/validators'
 import Form from './Form'
-import Button from '../Buttons'
+import Button from '../Common/Buttons'
 export default {
   data () {
     return {

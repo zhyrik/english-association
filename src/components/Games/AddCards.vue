@@ -83,8 +83,8 @@
 <script>
 import { url, required } from 'vuelidate/lib/validators'
 import Card from './Card'
-import Form from './Form/Form'
-import Button from './Buttons'
+import Form from '../Form/Form'
+import Button from '../Common/Buttons'
 export default {
   data () {
     return {

@@ -19,8 +19,8 @@
 
 <script>
 import Card from './Card'
-import Word from './Word'
-import Button from './Button'
+// import Word from './Word'
+import Button from '../Common/Button'
 export default {
   data () {
     return {
@@ -36,7 +36,7 @@ export default {
   },
   components: {
     myCard: Card,
-    myWord: Word,
+    // myWord: Word,
     myButton: Button
   },
   props: ['flag', 'items'],

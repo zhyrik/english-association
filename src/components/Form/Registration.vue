@@ -57,7 +57,7 @@
 import { email, required, minLength, sameAs } from 'vuelidate/lib/validators'
 import Form from './Form'
 import Modal from '../Common/Modal'
-import Button from '../Buttons'
+import Button from '../Common/Buttons'
 export default {
   data () {
     return {
