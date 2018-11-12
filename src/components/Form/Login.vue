@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <my-form>
+    <my-form v-if="flag">
 
       <label for="email">Email</label>
       <input
@@ -24,8 +24,14 @@
         <div class="error-text" v-if="$v.password.$error">Min length 6</div>
       </div>
 
-      <my-button><span @click.prevent="add">Login</span></my-button>
+      <my-button><span @click="onSubmit">Login</span></my-button>
     </my-form>
+
+    <my-modal v-else>
+      <h3>Error! Try again</h3>
+      <my-button><span @click="flag=!flag">Login</span></my-button><br>
+      <my-button><router-link to="/" >Home</router-link></my-button>
+    </my-modal>
   </div>
 </template>
 
@@ -33,11 +39,13 @@
 import { email, required, minLength } from 'vuelidate/lib/validators'
 import Form from './Form'
 import Button from '../Common/Buttons'
+import Modal from '../Common/Modal'
 export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      flag: true
     }
   },
   validations: {
@@ -52,7 +60,25 @@ export default {
   },
   components: {
     myButton: Button,
-    myForm: Form
+    myForm: Form,
+    myModal: Modal
+  },
+  methods: {
+    onSubmit () {
+      if (!this.$v.password.$error && !this.$v.email.$error && this.email && this.password) {
+        const user = {
+          email: this.email,
+          password: this.password
+        }
+        this.$store.dispatch('loginUser', user)
+          .then(() => {
+            console.log(1)
+          })
+      } else {
+        this.flag = !this.flag
+        this.password = ''
+      }
+    }
   }
 }
 </script>

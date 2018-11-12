@@ -21,6 +21,12 @@ export default {
         .then(user => {
           commit('setUser', new User(user.uid))
         })
+    },
+    loginUser ({commit}, {email, password}) {
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(user => {
+          commit('setUser', new User(user.uid))
+        })
     }
   },
   getters: {
