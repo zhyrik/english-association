@@ -107,7 +107,7 @@ export default {
   },
   computed: {
     newItems () {
-      return this.$store.state.newItems
+      return this.$store.state.items.newItems
     }
   },
   components: {
@@ -130,13 +130,13 @@ export default {
   methods: {
     add () {
       let obj = {eng: this.eng, translate: this.translate, url: this.url}
-      this.$store.state.newItems.push(obj)
+      this.$store.state.items.newItems.push(obj)
       this.eng = ''
       this.translate = ''
       this.url = ''
     },
     sub (index) {
-      this.$store.state.newItems.splice(index, 1)
+      this.$store.state.items.newItems.splice(index, 1)
     }
   }
 }

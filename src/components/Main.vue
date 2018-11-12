@@ -31,7 +31,8 @@ export default {
   },
   computed: {
     items () {
-      return this.$store.state.items
+      console.log(this.$store.state.items)
+      return this.$store.state.items.items
     }
   },
   components: {

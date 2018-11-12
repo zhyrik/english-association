@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import Vuelidate from 'vuelidate'
+import * as firebase from 'firebase'
 import store from './store/index'
 import router from './router'
 
@@ -17,5 +18,15 @@ new Vue({
   components: {
     App
   },
-  template: '<App/>'
+  template: '<App/>',
+  created () {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyCbDnpT2RogPPnw6_TlWQx8Hj-wZturVR8',
+      authDomain: 'english-association.firebaseapp.com',
+      databaseURL: 'https://english-association.firebaseio.com',
+      projectId: 'english-association',
+      storageBucket: 'english-association.appspot.com',
+      messagingSenderId: '517225220601'
+    })
+  }
 })
