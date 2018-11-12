@@ -27,7 +27,7 @@ export default {
         url: 'https://img.purch.com/rc/300x200/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA3Ni8yMTkvb3JpZ2luYWwvY3VjdW1iZXJzLmpwZw=='
       }
     ],
-    newItems: [{n:1}]
+    newItems: []
   },
   mutations: {
 
