@@ -1,7 +1,7 @@
 <template>
   <div>
     <hr><hr>
-    <form>
+    <my-form>
 
       <label for="translate">Narive word</label>
       <input
@@ -43,11 +43,11 @@
       </div>
 
       <my-button><span @click.prevent="add">add word</span></my-button>
-    </form>
+    </my-form>
 
     <hr><hr>
 
-    <form>
+    <my-form>
       <label for="title">title</label>
       <input
         type="text"
@@ -59,7 +59,8 @@
         <div class="error-text" v-if="$v.translate.$error">It is require</div>
       </div>
       <my-button><span @click.prevent="add">push all</span></my-button>
-    </form>
+    </my-form>
+
     <ul class="list">
       <li
         v-for="(list, index) in newItems"
@@ -82,6 +83,7 @@
 <script>
 import { url, required } from 'vuelidate/lib/validators'
 import Card from './Card'
+import Form from './Form/Form'
 import Button from './Buttons'
 export default {
   data () {
@@ -110,7 +112,8 @@ export default {
   },
   components: {
     myCard: Card,
-    myButton: Button
+    myButton: Button,
+    myForm: Form
   },
   validations: {
     eng: {
@@ -153,54 +156,6 @@ li{
   list-style: none;
   border: 1px solid #6C401B;
   margin: 10px;
-}
-
-form{
-  max-width: 200px;
-  margin: 10px auto;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  background: black;
-  padding: 50px;
-  color: grey;
-}
-label{
-  display: flex;
-  flex-direction: column;
-}
-input{
-  box-sizing: border-box;
-  width: 100%;
-  margin: 5px 0 0 0;
-  font-size: 18px;
-  padding: 5px;
-  color: #979596;
-  outline: none;
-  border: 1px solid #979596;
-  background: #18191E;
-  font-weight: 200;
-}
-.bottom{
-  margin-bottom: 20px;
-}
-.error{
-  border: 1px solid rgb(180, 90, 90);
-  background: rgb(65, 35, 35);
-}
-label{
-  font-weight: 700;
-  text-transform: capitalize;
-}
-.error-wrap{
-  height: 20px;
-}
-.error-text{
-  padding: 5px 0;
-  font-size: 12px;
-  color: rgb(180, 90, 90);
-  font-family: arial;
 }
 
 .link{
